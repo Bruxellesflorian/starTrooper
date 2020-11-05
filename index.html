@@ -1,130 +1,226 @@
 <!DOCTYPE HTML>
 <meta charset="utf-8">
-<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="style.css" />
 <html>
+
 <head>
-<title>Colonie</title>    
+    <title>Colonie</title>
 </head>
 
 
 
-<div id="zoneDetat"></div>    
-    <div id="tabResource">
-            <div>Jour: <span id="jour">1</span></div>
-            <div id="or"><img src="image/or.png" width="10%">OR: <span id="qtOr">0</span></div>
-            <div id="fer"><img src="image/fer.png" width="10%">FER: <span id="qtFer">0</span></div> 
-            <div id="gaz"><img src="image/gaz.gif" width="6%">GAZ: <span id="qtGaz">0</span></div> 
-            <div id="soldat">SOLDAT: <span id="qtSoldat"></span></div>
-            <div>ETAT DU MUR: <span id="mur"></span>/<span id="murMax"></span><button id="repMur" onclick="repMur()">Réparation du mur !</button></div>
-            <button id="nextDay" onclick="passerUneNuit()">Passer une nuit</button>    
-    </div>    
+<div id="zoneDetat"></div>
+<div id="tabResource">
+    <div>Jour: <span id="jour">1</span></div>
+    <div id="or"><img src="image/or.png" width="10%">OR: <span id="qtOr">0</span></div>
+    <div id="fer"><img src="image/fer.png" width="10%">FER: <span id="qtFer">0</span></div>
+    <div id="gaz"><img src="image/gaz.gif" width="6%">GAZ: <span id="qtGaz">0</span></div>
+    <div id="soldat">SOLDAT: <span id="qtSoldat"></span></div>
+    <div>ETAT DU MUR: <span id="mur"></span>/<span id="murMax"></span><button id="repMur" onclick="repMur()">Réparation
+            du mur !</button></div>
+    <button id="nextDay" onclick="passerUneNuit()">Passer une nuit</button>
+</div>
 
 <!--<div id="suivant"><button onclick="suivant()">Suivant</button></div>    -->
-<div id="placementTable">    
-<div id="flexTable">
-<div><button><div id="pop" onclick="aspect3()">POPULATION: <span id="qtPop">20</span>/<span id="popMax">0</span></div></button> 
-    <div id="GererPop">
+<div id="placementTable">
+    <div id="flexTable">
+        <div><button>
+                <div id="pop" onclick="aspect3()">POPULATION: <span id="qtPop">20</span>/<span id="popMax">0</span>
+                </div>
+            </button>
+            <div id="GererPop">
 
-        <table>   
-            <tr>
-                <td>Travailleur Or :</td><td><span id="popOr">0</span>/<span id="popMineOrMax">10</span></td><td><button id="plusOr" onclick="plusOr()">+</button></td><td><button id="minusOr" onclick="minusOr()">-</button></td><td>Vous gagnez <span id="qtOrtab"></span> d'or par jour.</td>
-            </tr>
-            <tr>
-                <td>Travailleur FER:</td><td><span id="popFer">0</span>/<span id="popMineFerMax">10</span></td><td><button id="plusFer" onclick="plusFer()">+</button></td><td><button id="minusFer" onclick="minusFer()">-</button></td><td>Vous gagnez <span id="qtFertab"></span> de fer par jour.</td>
-            </tr>
-            <tr>
-                <td>Travailleur GAZ: </td><td><span id="popGaz">0</span>/<span id="popMineGazMax">5</span></td><td><button id="plusGaz" onclick="plusGaz()">+</button></td><td><button id="minusGaz" onclick="minusGaz()">-</button></td><td>Vous gagnez <span id="qtGaztab"></span> de gaz par jour.</td>
-            </tr>
-            <tr>
-                <td>SOLDAT:</td><td><span id="popSoldat">0</span>/<span id="popMineSoldatMax"></span></td><td><button id="plusSoldat" onclick="plusSoldat()">+</button></td>
-            </tr>  
-            <tr>
-                <td class="noBorder"></td><td class="noBorder"></td ><td class="noBorder"></td><td class="noBorder"></td><td class="noBorder"><button id="valid" onclick="valid()">Valider</button></td>
-            </tr>
-        </table>     
-     
-    </div>    
-</div>
-<div><button onclick="aspect0()">Recrutement</button>
-        <div id="recrutTable">
-            <table>
+                <table>
                     <tr>
-                        <td class="noBorder"></td><td>OR</td><td>FER</td><td>GAZ</td>
-                    </tr>        
-                    <tr>
-                        <td>Recrutement des colons</td><td><span>20</span></td><td>0</td><td>0</td><td><button id="recrutementColon" onclick="recrutementColon()">+1</button></td>
+                        <td>Travailleur Or :</td>
+                        <td><span id="popOr">0</span>/<span id="popMineOrMax">10</span></td>
+                        <td><button id="plusOr" onclick="plusOr()">+</button></td>
+                        <td><button id="minusOr" onclick="minusOr()">-</button></td>
+                        <td>Vous gagnez <span id="qtOrtab"></span> d'or par jour.</td>
                     </tr>
                     <tr>
-                        <td>Recrutement des soldats</td><td><span>10</span></td><td>10</td><td>5</td><td><button id="recrutementDesSoldats" onclick="recrutementDesSoldats()">+1</button></td>
-                    </tr>        
-            </table>
-    </div>  
-</div>    
+                        <td>Travailleur FER:</td>
+                        <td><span id="popFer">0</span>/<span id="popMineFerMax">10</span></td>
+                        <td><button id="plusFer" onclick="plusFer()">+</button></td>
+                        <td><button id="minusFer" onclick="minusFer()">-</button></td>
+                        <td>Vous gagnez <span id="qtFertab"></span> de fer par jour.</td>
+                    </tr>
+                    <tr>
+                        <td>Travailleur GAZ: </td>
+                        <td><span id="popGaz">0</span>/<span id="popMineGazMax">5</span></td>
+                        <td><button id="plusGaz" onclick="plusGaz()">+</button></td>
+                        <td><button id="minusGaz" onclick="minusGaz()">-</button></td>
+                        <td>Vous gagnez <span id="qtGaztab"></span> de gaz par jour.</td>
+                    </tr>
+                    <tr>
+                        <td>SOLDAT:</td>
+                        <td><span id="popSoldat">0</span>/<span id="popMineSoldatMax"></span></td>
+                        <td><button id="plusSoldat" onclick="plusSoldat()">+</button></td>
+                    </tr>
+                    <tr>
+                        <td class="noBorder"></td>
+                        <td class="noBorder"></td>
+                        <td class="noBorder"></td>
+                        <td class="noBorder"></td>
+                        <td class="noBorder"><button id="valid" onclick="valid()">Valider</button></td>
+                    </tr>
+                </table>
 
-<div><button onclick="aspect1()">Amélioration</button>
-    <div id="batimentTable">
-        <table>
-            <tr>
-                <td>Batiment</td><td>OR</td><td>FER</td><td>GAZ</td><td class="noBorder"></td><td>Nombre</td>
-            </tr>
-             
-            <tr>
-                <td>MAISON</td><td>25</td><td>25</td><td>5</td><td><button onclick="upMaison()">+</button></td><td id="niveauDeMaison">0</td>
-            </tr>            
-            <tr>
-                <td>MINE D'OR</td><td>50</td><td>50</td><td>0</td><td><button onclick="upMinedor()">+</button></td><td><span id="nombreMineDor"></span></td>
-            </tr>
-            <tr>
-                <td>MINE DE FER</td><td>50</td><td>50</td><td>0</td><td><button onclick="upMineFer()">+</button></td><td><span id="nombreMineFer"></span></td>
-            </tr>
-            <tr>
-                <td>MINE DE GAZ</td><td>50</td><td>50</td><td>40</td><td><button onclick="upMineGaz()">+</button></td><td><span id="nombreMineGaz"></span></td>
-            </tr>            
-            <tr>
-                <td>CASERNE</td><td>200</td><td>200</td><td>150</td><td><button onclick="upCaserne()">+</button></td><td><span id="niveauDeCaserne"></span></td>
-            </tr>
-            <tr>
-                <td>MUR</td><td>300</td><td>300</td><td>100</td><td><button id="upMur" onclick="upMur()">+</button></td><td>1</td>
-            </tr>
-            
-        </table>
+            </div>
+        </div>
+        <div><button onclick="aspect0()">Recrutement</button>
+            <div id="recrutTable">
+                <table>
+                    <tr>
+                        <td class="noBorder"></td>
+                        <td>OR</td>
+                        <td>FER</td>
+                        <td>GAZ</td>
+                    </tr>
+                    <tr>
+                        <td>Recrutement des colons</td>
+                        <td><span>20</span></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><button id="recrutementColon" onclick="recrutementColon()">+1</button></td>
+                    </tr>
+                    <tr>
+                        <td>Recrutement des soldats</td>
+                        <td><span>10</span></td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td><button id="recrutementDesSoldats" onclick="recrutementDesSoldats()">+1</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div><button onclick="aspect1()">Amélioration</button>
+            <div id="batimentTable">
+                <table>
+                    <tr>
+                        <td>Batiment</td>
+                        <td>OR</td>
+                        <td>FER</td>
+                        <td>GAZ</td>
+                        <td class="noBorder"></td>
+                        <td>Nombre</td>
+                    </tr>
+
+                    <tr>
+                        <td>MAISON</td>
+                        <td>25</td>
+                        <td>25</td>
+                        <td>5</td>
+                        <td><button onclick="upMaison()">+</button></td>
+                        <td id="niveauDeMaison">0</td>
+                    </tr>
+                    <tr>
+                        <td>MINE D'OR</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>0</td>
+                        <td><button onclick="upMinedor()">+</button></td>
+                        <td><span id="nombreMineDor"></span></td>
+                    </tr>
+                    <tr>
+                        <td>MINE DE FER</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>0</td>
+                        <td><button onclick="upMineFer()">+</button></td>
+                        <td><span id="nombreMineFer"></span></td>
+                    </tr>
+                    <tr>
+                        <td>MINE DE GAZ</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>40</td>
+                        <td><button onclick="upMineGaz()">+</button></td>
+                        <td><span id="nombreMineGaz"></span></td>
+                    </tr>
+                    <tr>
+                        <td>CASERNE</td>
+                        <td>200</td>
+                        <td>200</td>
+                        <td>150</td>
+                        <td><button onclick="upCaserne()">+</button></td>
+                        <td><span id="niveauDeCaserne"></span></td>
+                    </tr>
+                    <tr>
+                        <td>MUR</td>
+                        <td>300</td>
+                        <td>300</td>
+                        <td>100</td>
+                        <td><button id="upMur" onclick="upMur()">+</button></td>
+                        <td>1</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div><button onclick="aspect2()">Déploiement</button>
+            <div id="deployementTable">
+                <table>
+
+                    <tr>
+                        <td>Unité</td>
+                        <td> Coût d'OR</td>
+                        <td>Coût FER</td>
+                        <td>Coût GAZ</td>
+                        <td class="noBorder"></td>
+                        <td>Nombre</td>
+                    </tr>
+                    <tr>
+                        <td>charDeCombat</td>
+                        <td>140</td>
+                        <td>140</td>
+                        <td>100</td>
+                        <td><button onclick="upChar()">+1</button></td>
+                        <td><span id="charDeCombat"></span></td>
+                    </tr>
+                    <tr>
+                        <td>tourelleAuto</td>
+                        <td>70</td>
+                        <td>70</td>
+                        <td>50</td>
+                        <td><button onclick="upTourelle()">+1</button></td>
+                        <td><span id="tourelleAuto"></span></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
     </div>
 </div>
-<div><button onclick="aspect2()">Déploiement</button>
-    <div id="deployementTable">
-            <table>
-   
-            <tr>
-                <td>Unité</td><td> Coût d'OR</td><td>Coût FER</td><td>Coût GAZ</td><td class="noBorder"></td><td>Nombre</td>
-            </tr>
-            <tr>
-                <td>charDeCombat</td><td>140</td><td>140</td><td>100</td><td><button onclick="upChar()">+1</button></td><td><span id="charDeCombat"></span></td>
-            </tr>
-            <tr>
-                <td>tourelleAuto</td><td>70</td><td>70</td><td>50</td><td><button onclick="upTourelle()">+1</button></td><td><span id="tourelleAuto"></span></td>
-            </tr>
-            
-        </table>
-    </div>
-    </div>    
-</div>
-     </div>
-    
-    <div id="eventPage"><span id="aideMur">or:50 / fer:50 / gaz:25 / +mur 2</span><span id="eventRead"></span><br><span id="loot"></span><br><span id="fenetre1"></span><br><span id="fenetre2"></span></div><br>
-            <div id="questionPage"> <span id="question"><button id="yes">Y</button><button id="non">N</button></span><div ><img id="gif" width="30%"></div></div>
 
-    
-   
+<div id="eventPage"><span id="aideMur">or:50 / fer:50 / gaz:25 / +mur 2</span><span id="eventRead"></span><br><span
+        id="loot"></span><br><span id="fenetre1"></span><br><span id="fenetre2"></span></div><br>
+<div id="questionPage"> <span id="question"><button id="yes">Y</button><button id="non">N</button></span>
+    <div><img id="gif" width="30%"></div>
+</div>
+
+
+
 
 
 <body>
-    <div id="aide"><h1>Comment jouer ?</h1><p>1- Placer vos points dans la partie population.<br>2- Valider en cliquant sur valider.<br>3- Puis cliquer sur Passer une nuit en haut à droite de l'écran.</p><p><button onclick="closeAide()">Fermer cette aide à deux balles</button></p></div>
-<div id="pvChar">PV chars de combat:
-<div id="gestionBarre">   
-    <div id="barre"><div id="barreProgress"></div></div></div>
-</div>  
+    <div id="aide">
+        <h1>Comment jouer ?</h1>
+        <p>1- Placer vos points dans la partie population.<br>2- Valider en cliquant sur valider.<br>3- Puis cliquer sur
+            Passer une nuit en haut à droite de l'écran.</p>
+        <p><button onclick="closeAide()">Fermer cette aide à deux balles</button></p>
+    </div>
+    <div id="pvChar">PV chars de combat:
+        <div id="gestionBarre">
+            <div id="barre">
+                <div id="barreProgress"></div>
+            </div>
+        </div>
+    </div>
 
 
-</body> 
-<script src="js.js"></script>    
-</html>    
+</body>
+<script src="js.js"></script>
+
+</html>
