@@ -1,0 +1,88 @@
+html{
+    font-family: sans-serif;
+    background-color:#292C4B;
+    color: white
+
+}
+#tabResource{
+    display: flex;
+    justify-content:space-around;
+   
+}
+td{
+    border: solid;
+    border-width: 1px;
+    border-color: dimgrey;
+    padding: 5px;
+    margin: 2px;
+    
+}
+.noBorder{
+    border : none;
+    background-color: #292C4B;    
+}
+#flexTable{
+    display: flex;
+    justify-content:space-between;
+    text-align: center,
+}
+#tabResource{
+    background-color: #414999;
+    border: solid;
+    border-width: 1px;
+    border-color: dimgrey;
+}
+td{
+    background-color: #414999;
+}
+#eventPage{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#questionPage{
+    position: relative;
+    left: 50%;
+}
+#aide{
+    position: absolute;
+    background-color: darkgreen;
+    left: 25%;
+    border: solid;
+    border-width: 1px;
+    border-color: dimgrey;
+    padding: 5px;
+    margin: 2px;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    
+}
+
+#barre{
+
+            border-top: none;
+            border-bottom: solid;
+            border-left: solid;
+    background-color: aliceblue;
+            border-width: 3px;
+            width: 10%;
+}
+#barreProgress{
+            border-width: 3px;
+            background-color: darkred;
+            height: 20px;    
+}
+#pourquoi{
+    position:fixed;
+    top: 45%;
+    left: 40%;
+    font-weight:600;
+    background-color: orange;
+    padding: 30px;
+}
+#beCode{
+    position: fixed;
+    bottom: 2px;
+}
